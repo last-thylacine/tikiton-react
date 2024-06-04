@@ -1,4 +1,4 @@
-.ticketListItem {
+.ticketTypeListItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,6 +6,6 @@
     border: 1px solid grey;
 }
 
-.ticketListItem + .ticketListItem {
+.ticketTypeListItem + .ticketTypeListItem {
     margin-top: 10px;
 }

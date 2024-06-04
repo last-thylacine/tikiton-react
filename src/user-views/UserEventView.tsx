@@ -1,7 +1,7 @@
 import { EventCard } from "../components/EventCard"
 import { Header } from "../components/Header"
 import { Main } from "../components/Main"
-import { TicketList } from "../components/TicketList"
+import { TicketTypeList } from "../components/TicketTypeList"
 
 const EVENT = {
     id: 'EVT-001',
@@ -20,14 +20,14 @@ const EVENT = {
     }],
 }
 
-export const UserTicketView = () => {
+export const UserEventView = () => {
     const event = EVENT
     return (
         <div>
             <Header/>
             <Main>
                 <EventCard event={event} />
-                <TicketList tickets={event.ticket_types} />
+                <TicketTypeList ticket_types={event.ticket_types} />
             </Main>
         </div>
     )
