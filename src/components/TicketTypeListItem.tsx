@@ -1,7 +1,11 @@
 import css from "./TicketTypeListItem.module.css"
 
+const addToCart = (id) => {
+	console.log(`ticket_type id=${id} added to cart`)
+}
+
 export const TicketTypeListItem = ({ ticket_type }) => (
-	<div className={css.ticketTypeListItem}>
+	<div className={css.ticketTypeListItem} onClick={() => addToCart(ticket_type.id)}>
 		<div>
 			<div className={css.ticketTypeName}>
 				{ticket_type.name}
