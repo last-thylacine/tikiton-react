@@ -1,11 +1,11 @@
 .ticketTypeListItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px;
-    border: 1px solid grey;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 4px;
+	border: 1px solid grey;
 }
 
 .ticketTypeListItem + .ticketTypeListItem {
-    margin-top: 10px;
+	margin-top: 10px;
 }
