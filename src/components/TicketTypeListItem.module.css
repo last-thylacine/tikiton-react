@@ -9,3 +9,7 @@
 .ticketTypeListItem + .ticketTypeListItem {
 	margin-top: 10px;
 }
+
+.ticketTypeDescription {
+	color: gray;
+}
