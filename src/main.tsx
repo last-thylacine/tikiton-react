@@ -6,7 +6,8 @@ import './index.css'
 import "inter-ui/inter.css"
 import "inter-ui/inter-variable.css"
 
-WebApp.ready();
+WebApp.ready()
+WebApp.expand()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
