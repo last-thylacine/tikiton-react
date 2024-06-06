@@ -13,7 +13,7 @@ export const usePay = () => {
 			WebApp.showAlert('success')
 		} catch (e) {
 			console.error(e)
-			WebApp.showAlert('failure')
+			WebApp.showAlert(e)
 		}
 	}
 	return pay

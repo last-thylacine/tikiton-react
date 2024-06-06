@@ -8,36 +8,44 @@ import {
 	DrawerHeader,
 	DrawerOverlay,
 } from '@chakra-ui/react'
+import { MainButton } from '@twa-dev/sdk/react'
 
 import { useStore } from '../store'
+import { usePay } from '../hooks'
 import { TicketTypeList } from './TicketTypeList'
 
 export const CartDrawer = () => {
 	const drawer = useStore(state => state.drawer)
 	const drawerClose = useStore(state => state.drawerClose)
+	const pay = usePay()
+	const showPayButton = drawer
 	return (
-		<Drawer
-			isOpen={drawer}
-			placement='bottom'
-			onClose={drawerClose}
+		<>
+			<Drawer
+				isOpen={drawer}
+				placement='bottom'
+				onClose={drawerClose}
 			// finalFocusRef={btnRef}
-		>
-			<DrawerOverlay />
-			<DrawerContent>
-				<DrawerCloseButton />
-				{/* <DrawerHeader>Create your account</DrawerHeader> */}
+			>
+				<DrawerOverlay />
+				<DrawerContent>
+					<DrawerCloseButton />
+					{/* <DrawerHeader>Create your account</DrawerHeader> */}
 
-				<DrawerBody>
-					<TicketTypeList />
-				</DrawerBody>
+					<DrawerBody>
+						<TicketTypeList />
+						<Button onClick={pay}>Pay</Button>
+					</DrawerBody>
 
-				{/* <DrawerFooter>
+					{/* <DrawerFooter>
 					<Button variant='outline' mr={3} onClick={drawerClose}>
 						Cancel
 					</Button>
 					<Button>Save</Button>
 				</DrawerFooter> */}
-			</DrawerContent>
-		</Drawer>
+				</DrawerContent>
+			</Drawer>
+			{showPayButton && <MainButton text="Pay" onClick={pay} />}
+		</>
 	)
 }
