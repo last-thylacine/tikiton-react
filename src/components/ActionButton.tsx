@@ -4,15 +4,22 @@ import { useStore } from "../store"
 import { usePay } from "../hooks"
 
 export const ActionButton = () => {
-	const drawer = useStore(state => state.drawer)
+	const action = useStore(state => state.action)
+	const actionHide = useStore(state => state.actionHide)
 	const drawerOpen = useStore(state => state.drawerOpen)
 	const pay = usePay()
-	const showBuyButton = !drawer
-	const showPayButton = drawer
+	const onBuy = () => {
+		actionHide()
+		drawerOpen()
+	}
+	const onPay = () => {
+		actionHide()
+		pay()
+	}
 	return (
 		<>
-			{showBuyButton && <MainButton text="Buy" onClick={drawerOpen} />}
-			{showPayButton && <MainButton text="Pay" onClick={pay} />}
+			{action === 'Buy' && <MainButton text={action} onClick={onBuy} />}
+			{action === 'Pay' && <MainButton text={action} onClick={onPay} />}
 		</>
 	)
 }

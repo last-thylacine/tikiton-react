@@ -39,9 +39,15 @@ export const useStore = create()(
 	immer((set) => ({
 		events: INITIAL_EVENTS,
 		event: 'EVT-001',
-		cart: {
-			['TTY-001']: 1,
-		},
+
+		action: null,
+		actionShow: (action) => set((state) => {
+			state.action = action
+		}),
+		actionHide: () => set((state) => {
+			state.action = null
+		}),
+
 		drawer: false,
 		drawerOpen: () => set((state) => {
 			state.drawer = true
@@ -49,6 +55,10 @@ export const useStore = create()(
 		drawerClose: () => set((state) => {
 			state.drawer = false
 		}),
+
+		cart: {
+			['TTY-001']: 1,
+		},
 		cartIncr: (id) => set((state) => {
 			const qty = state.cart[id] ?? 0
 			state.cart[id] = qty + 1
