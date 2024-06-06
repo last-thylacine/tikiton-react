@@ -8,10 +8,11 @@ import { TicketTypeList } from "../components/TicketTypeList"
 import { ONE_NANOTON, SELLER_ADDRESS } from '../constants'
 import { createTransaction } from '../helpers'
 import { useStore } from '../store'
+import { CartDrawer } from '../components/CartDrawer';
 
 export const UserEventView = () => {
-	const event = useStore(state => state.events[state.event])
-    const [tonConnectUI, _setOptions] = useTonConnectUI()
+	const drawerOpen = useStore(state => state.drawerOpen)
+	const [tonConnectUI, _setOptions] = useTonConnectUI()
 	const pay = async () => {
 		const transaction = createTransaction(SELLER_ADDRESS, ONE_NANOTON)
 		try {
@@ -28,8 +29,10 @@ export const UserEventView = () => {
 			<MainButton text="Pay" onClick={pay} />
 			<Main>
 				<TonConnectButton style={{ float: "right" }} />
-				<EventCard event={event} />
-				<TicketTypeList ticket_types={event.ticket_types} />
+				<EventCard />
+				<TicketTypeList />
+				<button onClick={drawerOpen}>Open sheet</button>
+				<CartDrawer />
 			</Main>
 		</>
 	)

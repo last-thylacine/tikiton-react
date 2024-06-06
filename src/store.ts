@@ -42,6 +42,13 @@ export const useStore = create()(
 		cart: {
 			['TTY-001']: 1,
 		},
+		drawer: false,
+		drawerOpen: () => set((state) => {
+			state.drawer = true
+		}),
+		drawerClose: () => set((state) => {
+			state.drawer = false
+		}),
 		cartIncr: (id) => set((state) => {
 			const qty = state.cart[id] ?? 0
 			state.cart[id] = qty + 1
