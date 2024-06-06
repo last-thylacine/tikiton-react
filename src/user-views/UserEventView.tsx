@@ -1,3 +1,6 @@
+import WebApp from '@twa-dev/sdk'
+import { BackButton, MainButton } from '@twa-dev/sdk/react'
+
 import { EventCard } from "../components/EventCard"
 import { Main } from "../components/Main"
 import { TicketTypeList } from "../components/TicketTypeList"
@@ -22,9 +25,13 @@ const EVENT = {
 export const UserEventView = () => {
 	const event = EVENT
 	return (
-		<Main>
-			<EventCard event={event} />
-			<TicketTypeList ticket_types={event.ticket_types} />
-		</Main>
+		<>
+			<BackButton onClick={() => WebApp.showAlert('no going back')} />
+			<MainButton text="Submit" onClick={() => WebApp.showAlert('submitted')} />
+			<Main>
+				<EventCard event={event} />
+				<TicketTypeList ticket_types={event.ticket_types} />
+			</Main>
+		</>
 	)
 }
