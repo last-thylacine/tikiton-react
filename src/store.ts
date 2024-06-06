@@ -40,7 +40,7 @@ export const useStore = create()(
 		events: INITIAL_EVENTS,
 		event: 'EVT-001',
 
-		action: null,
+		action: 'Buy',
 		actionShow: (action) => set((state) => {
 			state.action = action
 		}),
