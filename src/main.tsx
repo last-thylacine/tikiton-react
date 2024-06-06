@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import WebApp from '@twa-dev/sdk'
 import { TonConnectUIProvider } from '@tonconnect/ui-react'
+import { ChakraProvider } from '@chakra-ui/react'
 
 import { UserEventView } from './user-views/UserEventView'
 import { MANIFEST_URL } from './constants'
@@ -15,7 +16,9 @@ WebApp.expand()
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<TonConnectUIProvider manifestUrl={MANIFEST_URL}>
-			<UserEventView />
-        </TonConnectUIProvider>
+			<ChakraProvider>
+				<UserEventView />
+			</ChakraProvider>
+		</TonConnectUIProvider>
 	</React.StrictMode>,
 )

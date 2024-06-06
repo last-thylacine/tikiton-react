@@ -1,6 +1,7 @@
 import WebApp from '@twa-dev/sdk'
 import { BackButton, MainButton } from '@twa-dev/sdk/react'
 import { TonConnectButton } from '@tonconnect/ui-react'
+import { Button } from '@chakra-ui/react'
 
 import { EventCard } from "../components/EventCard"
 import { Main } from "../components/Main"
@@ -20,8 +21,9 @@ export const UserEventView = () => {
 			<Main>
 				<TonConnectButton style={{ float: "right" }} />
 				<EventCard />
-				<CartDrawer />
 			</Main>
+			<CartDrawer />
+			<Button onClick={drawerOpen}>cart</Button>
 			{showBuyButton && <MainButton text="Buy" onClick={drawerOpen} />}
 			{showPayButton && <MainButton text="Pay" onClick={pay} />}
 		</>
