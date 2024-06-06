@@ -33,7 +33,6 @@ export const UserEventView = () => {
 				<button onClick={pay}>
 					Pay
 				</button>
-				<div>{state}</div>
 			</Main>
 		</>
 	)
