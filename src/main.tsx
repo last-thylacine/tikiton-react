@@ -4,7 +4,7 @@ import WebApp from '@twa-dev/sdk'
 import { TonConnectUIProvider } from '@tonconnect/ui-react'
 
 import { UserEventView } from './user-views/UserEventView'
-import { MANIFEST_URL } from './data/constants'
+import { MANIFEST_URL } from './constants'
 import './index.css'
 import "inter-ui/inter.css"
 import "inter-ui/inter-variable.css"

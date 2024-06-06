@@ -5,8 +5,8 @@ import { TonConnectButton, useTonConnectUI } from '@tonconnect/ui-react'
 import { EventCard } from "../components/EventCard"
 import { Main } from "../components/Main"
 import { TicketTypeList } from "../components/TicketTypeList"
-import { EVENT } from '../data/mock'
-import { ONE_NANOTON, SELLER_ADDRESS } from '../data/constants'
+import { EVENT } from '../mock'
+import { ONE_NANOTON, SELLER_ADDRESS } from '../constants'
 import { createTransaction } from '../helpers'
 
 export const UserEventView = () => {
