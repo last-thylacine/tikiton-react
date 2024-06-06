@@ -25,7 +25,6 @@ export const CartDrawer = () => {
 				isOpen={drawer}
 				placement='bottom'
 				onClose={drawerClose}
-			// finalFocusRef={btnRef}
 			>
 				<DrawerOverlay />
 				<DrawerContent>
