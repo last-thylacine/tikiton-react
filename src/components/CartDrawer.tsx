@@ -8,7 +8,6 @@ import {
 	DrawerHeader,
 	DrawerOverlay,
 } from '@chakra-ui/react'
-import { MainButton } from '@twa-dev/sdk/react'
 
 import { useStore } from '../store'
 import { usePay } from '../hooks'
@@ -18,7 +17,6 @@ export const CartDrawer = () => {
 	const drawer = useStore(state => state.drawer)
 	const drawerClose = useStore(state => state.drawerClose)
 	const pay = usePay()
-	const showPayButton = drawer
 	return (
 		<>
 			<Drawer
@@ -44,7 +42,6 @@ export const CartDrawer = () => {
 				</DrawerFooter> */}
 				</DrawerContent>
 			</Drawer>
-			{showPayButton && <MainButton text="Pay" onClick={pay} />}
 		</>
 	)
 }
