@@ -63,11 +63,3 @@ export const useStore = create()(
 		}),
 	})),
 )
-
-
-// function doSomething() {
-//   useFooBar.setState((prev) => ({
-// 	foo: new Map(prev.foo).set('newKey', 'newValue'),
-// 	bar: new Set(prev.bar).add('newKey'),
-//   }))
-// }
