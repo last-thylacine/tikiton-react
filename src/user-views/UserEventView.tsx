@@ -10,6 +10,7 @@ import { CartDrawer } from '../components/CartDrawer'
 import { ActionButton } from '../components/ActionButton'
 
 export const UserEventView = () => {
+	console.log(WebApp.platform)
 	const drawerOpen = useStore(state => state.drawerOpen)
 	return (
 		<>
@@ -17,7 +18,8 @@ export const UserEventView = () => {
 			<Main>
 				<TonConnectButton style={{ float: "right" }} />
 				<EventCard />
-				<Button onClick={drawerOpen}>Buy</Button>
+				{WebApp.platform === 'unknown' && <Button onClick={drawerOpen}>Buy</Button>}
+				<div>{WebApp.platform}</div>
 			</Main>
 			<CartDrawer />
 			<ActionButton />

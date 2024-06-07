@@ -1,3 +1,4 @@
+import WebApp from '@twa-dev/sdk'
 import {
 	Button,
 	Drawer,
@@ -31,7 +32,7 @@ export const CartDrawer = () => {
 
 					<DrawerBody>
 						<TicketTypeList />
-						<Button onClick={pay}>Pay</Button>
+						{WebApp.platform === 'unknown' && <Button onClick={pay}>Pay</Button>}
 					</DrawerBody>
 
 					{/* <DrawerFooter>
