@@ -9,27 +9,27 @@ export const useStore = create()(
 		event: 'EVT-001',
 
 		modal: false,
-		modalTrue: () => set((state) => {
+		modalTrue: () => set(state => {
 			state.modal = true
 		}),
-		modalFalse: () => set((state) => {
+		modalFalse: () => set(state => {
 			state.modal = false
 		}),
 
 		drawer: false,
-		drawerOpen: () => set((state) => {
+		drawerOpen: () => set(state => {
 			state.drawer = true
 		}),
-		drawerClose: () => set((state) => {
+		drawerClose: () => set(state => {
 			state.drawer = false
 		}),
 
 		cart: {},
-		cartIncr: (id) => set((state) => {
+		cartIncr: (id) => set(state => {
 			const qty = state.cart[id] ?? 0
 			state.cart[id] = qty + 1
 		}),
-		cartDecr: (id) => set((state) => {
+		cartDecr: (id) => set(state => {
 			const qty = state.cart[id] ?? 0
 			if (qty <= 1) {
 				delete state.cart[id]
@@ -37,5 +37,8 @@ export const useStore = create()(
 				state.cart[id] = qty - 1
 			}
 		}),
+		cartClear: () => set(state => {
+			state.cart = {}
+		})
 	})),
 )

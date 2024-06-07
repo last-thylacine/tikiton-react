@@ -11,6 +11,7 @@ export const ActionButton = () => {
 	const drawerOpen = useStore(state => state.drawerOpen)
 	const drawerClose = useStore(state => state.drawerClose)
 	const cartNotEmpty = useStore(state => Object.values(state.cart).some(qty => qty > 0))
+	const cartClear = useStore(state => state.cartClear)
 	const pay = usePay()
 	const onBuy = () => {
 		drawerOpen()
@@ -20,6 +21,7 @@ export const ActionButton = () => {
 		drawerClose()
 		await pay()
 		modalFalse()
+		cartClear()
 	}
 	const showBuyButton = !modal && !drawer
 	const showPayButton = !modal && drawer && cartNotEmpty
