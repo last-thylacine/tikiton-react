@@ -12,6 +12,7 @@ import {
 
 import { useStore } from '../store'
 import { usePay } from '../hooks'
+import { IN_BROWSER } from '../constants'
 import { TicketTypeList } from './TicketTypeList'
 
 export const CartDrawer = () => {
@@ -32,7 +33,7 @@ export const CartDrawer = () => {
 
 					<DrawerBody>
 						<TicketTypeList />
-						{WebApp.platform === 'unknown' && <Button onClick={pay}>Pay</Button>}
+						{IN_BROWSER && <Button onClick={pay}>Pay</Button>}
 					</DrawerBody>
 
 					{/* <DrawerFooter>

@@ -5,9 +5,10 @@ import { Button } from '@chakra-ui/react'
 
 import { EventCard } from "../components/EventCard"
 import { Main } from "../components/Main"
-import { useStore } from '../store'
 import { CartDrawer } from '../components/CartDrawer'
 import { ActionButton } from '../components/ActionButton'
+import { IN_BROWSER } from '../constants'
+import { useStore } from '../store'
 
 export const UserEventView = () => {
 	console.log(WebApp.platform)
@@ -18,8 +19,7 @@ export const UserEventView = () => {
 			<Main>
 				<TonConnectButton style={{ float: "right" }} />
 				<EventCard />
-				{WebApp.platform === 'unknown' && <Button onClick={drawerOpen}>Buy</Button>}
-				<div>{WebApp.platform}</div>
+				{IN_BROWSER && <Button onClick={drawerOpen}>Buy</Button>}
 			</Main>
 			<CartDrawer />
 			<ActionButton />
