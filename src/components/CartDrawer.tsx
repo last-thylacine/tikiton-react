@@ -29,7 +29,7 @@ export const CartDrawer = () => {
 				<DrawerOverlay />
 				<DrawerContent>
 					<DrawerCloseButton />
-					{/* <DrawerHeader>Create your account</DrawerHeader> */}
+					<DrawerHeader>Choose your tickets</DrawerHeader>
 
 					<DrawerBody>
 						<TicketTypeList />

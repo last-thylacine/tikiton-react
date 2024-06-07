@@ -1,38 +1,51 @@
+import { Flex, IconButton, Text } from "@chakra-ui/react"
+import { FaPlus, FaMinus } from "react-icons/fa6"
+
 import { useStore } from "../store"
-import css from "./TicketTypeListItem.module.css"
 
 const addToCart = (id) => {
 	console.log(`ticket_type id=${id} added to cart`)
 }
 
 export const TicketTypeListItem = ({ ticket_type }) => {
-	const { id, name, description, cost } = ticket_type
+	const { id, name, cost } = ticket_type
 	const qty = useStore(state => state.cart[id])
 	const cartIncr = useStore(state => state.cartIncr)
 	const cartDecr = useStore(state => state.cartDecr)
 	return (
-		<div className={css.ticketTypeListItem} onClick={() => addToCart(id)}>
-			<div>
-				<div className={css.ticketTypeName}>
-					{name}
-				</div>
-				{/* <div className={css.ticketTypeDescription}>
-					{description}
-				</div> */}
-			</div>
-			<div className={css.ticketTypeCost}>
-				{`${cost.value} ${cost.currency}`}
-			</div>
-			{ qty && (
-				<>
-					<div onClick={() => cartDecr(id)}>-</div>
-					<div>{qty}</div>
-					<div onClick={() => cartIncr(id)}>+</div>
-				</>
-			)}
-			{ !qty && (
-				<div onClick={() => cartIncr(id)}>add</div>
-			)}
-		</div>
+		<Flex
+			p={2}
+			align="center"
+			justify="space-between"
+			onClick={() => addToCart(id)}
+		>
+			<Text>{name}</Text>
+			<Flex>
+				<Text mr={4}>
+					{`${cost.value} ${cost.currency}`}
+				</Text>
+				<IconButton
+					mr={2}
+					onClick={() => cartDecr(id)}
+					isRound={true}
+					variant='solid'
+					aria-label='-'
+					fontSize='14px'
+					boxSize="20px"
+					icon={<FaMinus />}
+				/>
+				<div>{qty ?? 0}</div>
+				<IconButton
+					ml={2}
+					onClick={() => cartIncr(id)}
+					isRound={true}
+					variant='solid'
+					aria-label='+'
+					fontSize='14px'
+					boxSize="20px"
+					icon={<FaPlus />}
+				/>
+			</Flex>
+		</Flex>
 	)
 }
