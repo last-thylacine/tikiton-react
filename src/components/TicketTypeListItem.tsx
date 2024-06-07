@@ -16,9 +16,9 @@ export const TicketTypeListItem = ({ ticket_type }) => {
 				<div className={css.ticketTypeName}>
 					{name}
 				</div>
-				<div className={css.ticketTypeDescription}>
+				{/* <div className={css.ticketTypeDescription}>
 					{description}
-				</div>
+				</div> */}
 			</div>
 			<div className={css.ticketTypeCost}>
 				{`${cost.value} ${cost.currency}`}

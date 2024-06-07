@@ -1,13 +1,17 @@
-import { useStore } from "../store"
+import { Box, Heading, Image, Text } from '@chakra-ui/react'
 
-import css from "./EventCard.module.css"
+import { useStore } from "../store"
+import cover from '../assets/cover.avif'
 
 export const EventCard = () => {
     const event = useStore(state => state.events[state.event])
     return (
-        <div className={css.eventCard}>
-            <div className={css.eventName}>{event.name}</div>
-            <div>{event.description}</div>
-        </div>
+        <>
+            <Image src={cover} borderRadius="xl" mt={3} mb={6} />
+            <Box pb={6}>
+                <Heading as='h1' size='lg' mb={4}>{event.name}</Heading>
+                <Text whiteSpace="pre-wrap">{event.description}</Text>
+            </Box>
+        </>
     )
 }
