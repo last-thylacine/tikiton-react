@@ -1,7 +1,7 @@
 import { Box, Heading, Image, Text } from '@chakra-ui/react'
 
 import { useStore } from "../store"
-import cover from '../assets/cover.avif'
+import cover from '../assets/cover.jpeg'
 
 export const EventCard = () => {
     const event = useStore(state => state.events[state.event])
