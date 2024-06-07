@@ -3,10 +3,6 @@ import { FaPlus, FaMinus } from "react-icons/fa6"
 
 import { useStore } from "../store"
 
-const addToCart = (id) => {
-	console.log(`ticket_type id=${id} added to cart`)
-}
-
 export const TicketTypeListItem = ({ ticket_type }) => {
 	const { id, name, cost } = ticket_type
 	const qty = useStore(state => state.cart[id])
@@ -17,7 +13,6 @@ export const TicketTypeListItem = ({ ticket_type }) => {
 			p={2}
 			align="center"
 			justify="space-between"
-			onClick={() => addToCart(id)}
 		>
 			<Text>{name}</Text>
 			<Flex>
