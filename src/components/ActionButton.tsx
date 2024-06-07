@@ -6,7 +6,9 @@ import { usePay } from "../hooks"
 export const ActionButton = () => {
 	const drawer = useStore(state => state.drawer)
 	const drawerOpen = useStore(state => state.drawerOpen)
+	const drawerClose = useStore(state => state.drawerClose)
 	const cartNotEmpty = useStore(state => Object.values(state.cart).some(qty => qty > 0))
+	const modal = useStore(state => state.modal)
 	const modalTrue = useStore(state => state.modalTrue)
 	const modalFalse = useStore(state => state.modalFalse)
 	const pay = usePay()
@@ -15,11 +17,12 @@ export const ActionButton = () => {
 	}
 	const onPay = async () => {
 		modalTrue()
+		drawerClose()
 		await pay()
 		modalFalse()
 	}
-	const showBuyButton = !drawer
-	const showPayButton = drawer && cartNotEmpty
+	const showBuyButton = !modal && !drawer
+	const showPayButton = !modal && drawer && cartNotEmpty
 	return (
 		<>
 			{showBuyButton && <MainButton text='Buy' onClick={onBuy} />}
