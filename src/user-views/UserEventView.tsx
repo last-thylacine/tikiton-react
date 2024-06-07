@@ -15,7 +15,7 @@ export const UserEventView = () => {
 	const drawerOpen = useStore(state => state.drawerOpen)
 	return (
 		<>
-			<BackButton onClick={() => WebApp.showAlert('no going back')} />
+			<BackButton onClick={() => WebApp.close()} />
 			<Main>
 				<Flex align="center" justify="space-between">
 					<Box>

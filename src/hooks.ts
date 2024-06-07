@@ -6,6 +6,7 @@ import { ONE_NANOTON, SELLER_ADDRESS } from './constants'
 
 export const usePay = () => {
 	const [tonConnectUI, _setOptions] = useTonConnectUI()
+	console.log(SELLER_ADDRESS, ONE_NANOTON)
 	const pay = async () => {
 		const transaction = createTransaction(SELLER_ADDRESS, ONE_NANOTON)
 		try {
