@@ -6,6 +6,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 import { UserEventView } from './user-views/UserEventView'
 import { MANIFEST_URL } from './constants'
+import { theme } from './theme'
 import './index.css'
 import "inter-ui/inter.css"
 import "inter-ui/inter-variable.css"
@@ -16,7 +17,7 @@ WebApp.expand()
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<TonConnectUIProvider manifestUrl={MANIFEST_URL}>
-			<ChakraProvider>
+			<ChakraProvider theme={theme}>
 				<UserEventView />
 			</ChakraProvider>
 		</TonConnectUIProvider>

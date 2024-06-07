@@ -17,7 +17,7 @@ export const UserEventView = () => {
 			<BackButton onClick={() => WebApp.showAlert('no going back')} />
 			<Main>
 				<Flex align="center" justify="space-between">
-					<Avatar boxSize="40px" />
+					<Avatar boxSize="40px" bgColor="rgb(18, 18, 20)" />
 					<TonConnectButton />
 				</Flex>
 				<EventCard />
