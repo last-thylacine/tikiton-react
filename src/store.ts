@@ -40,12 +40,20 @@ export const useStore = create()(
 		events: INITIAL_EVENTS,
 		event: 'EVT-001',
 
-		action: 'Buy',
-		actionShow: (action) => set((state) => {
-			state.action = action
+		// action: 'Buy',
+		// actionShow: (action) => set((state) => {
+		// 	state.action = action
+		// }),
+		// actionHide: () => set((state) => {
+		// 	state.action = null
+		// }),
+
+		modal: false,
+		modalTrue: () => set((state) => {
+			state.modal = true
 		}),
-		actionHide: () => set((state) => {
-			state.action = null
+		modalFalse: () => set((state) => {
+			state.modal = false
 		}),
 
 		drawer: false,
@@ -57,7 +65,7 @@ export const useStore = create()(
 		}),
 
 		cart: {
-			['TTY-001']: 1,
+			// ['TTY-001']: 1,
 		},
 		cartIncr: (id) => set((state) => {
 			const qty = state.cart[id] ?? 0
@@ -65,7 +73,7 @@ export const useStore = create()(
 		}),
 		cartDecr: (id) => set((state) => {
 			const qty = state.cart[id] ?? 0
-			if (qty === 1) {
+			if (qty <= 1) {
 				delete state.cart[id]
 			} else {
 				state.cart[id] = qty - 1

@@ -8,7 +8,10 @@ export const TicketTypeList = () => {
 	return (
 		<div className={css.ticketTypeList}>
 			{ticket_types.map(ticket_type => (
-				<TicketTypeListItem ticket_type={ticket_type} />
+				<TicketTypeListItem
+					key={ticket_type.id}
+					ticket_type={ticket_type}
+				/>
 			))}
 		</div>
 	)
