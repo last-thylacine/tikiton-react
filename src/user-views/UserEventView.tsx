@@ -11,7 +11,6 @@ import { IN_BROWSER } from '../constants'
 import { useStore } from '../store'
 
 export const UserEventView = () => {
-	console.log(WebApp.platform)
 	const drawerOpen = useStore(state => state.drawerOpen)
 	return (
 		<>
