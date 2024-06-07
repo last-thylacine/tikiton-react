@@ -35,12 +35,12 @@ export const INITIAL_EVENTS = {
 			id: 'TTY-001',
 			name: 'Standard ticket',
 			// description: 'One line description',
-			cost: { value: 1, currency: 'TON' },
+			cost: { value: 10 ** 8, currency: 'TON' },
 		}, {
 			id: 'TTY-002',
 			name: 'VIP ticket',
 			// description: 'One line description',
-			cost: { value: 5, currency: 'TON' },
+			cost: { value: 3 * 10 ** 8, currency: 'TON' },
 		}],
 	},
 }

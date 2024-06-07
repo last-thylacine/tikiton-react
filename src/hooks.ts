@@ -15,7 +15,7 @@ export const usePay = () => {
 		return partial_sum + cost * qty
 	}, 0)
 	const pay = async () => {
-		const transaction = createTransaction(SELLER_ADDRESS, String(total * 10 ** 9))
+		const transaction = createTransaction(SELLER_ADDRESS, String(total))
 		try {
 			await tonConnectUI.sendTransaction(transaction)
 			WebApp.showAlert('success')

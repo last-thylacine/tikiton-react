@@ -17,7 +17,7 @@ export const TicketTypeListItem = ({ ticket_type }) => {
 			<Text>{name}</Text>
 			<Flex>
 				<Text mr={4}>
-					{`${cost.value} ${cost.currency}`}
+					{`${cost.value / 10 ** 9} ${cost.currency}`}
 				</Text>
 				<IconButton
 					mr={2}
