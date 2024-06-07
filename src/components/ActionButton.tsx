@@ -25,8 +25,8 @@ export const ActionButton = () => {
 	const showPayButton = !modal && drawer && cartNotEmpty
 	return (
 		<>
-			{showBuyButton && <MainButton text='Buy' onClick={onBuy} />}
-			{showPayButton && <MainButton text='Pay' onClick={onPay} />}
+			{showBuyButton && <MainButton text='Buy tickets' onClick={onBuy} />}
+			{showPayButton && <MainButton text='Pay with TON' onClick={onPay} />}
 		</>
 	)
 }
